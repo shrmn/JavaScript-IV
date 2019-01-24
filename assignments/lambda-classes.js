@@ -8,6 +8,10 @@ class Person {
     this.age = pAttrs.age;
     this.location = pAttrs.location;
   }
+
+  speak () {
+    return `Hello, my name is ${this.name} and I am from ${location}.`
+  }
 }
 
 // Instructor
