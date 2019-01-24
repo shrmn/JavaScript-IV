@@ -14,14 +14,14 @@ class Person {
   }
 }
 
-// Instructor
+// Instructor - needs: name, age, location, specialty, favLanguage, catchPhrase
 
 class Instructor extends Person {
   constructor (iAttrs) {
-    super (pAttrs);
-    this.specialty = pAttrs.specialty;
-    this.favLanguage = pAttrs.favLanguage;
-    this.catchPhrase = pAttrs.catchPhrase;
+    super (iAttrs);
+    this.specialty = iAttrs.specialty;
+    this.favLanguage = iAttrs.favLanguage;
+    this.catchPhrase = iAttrs.catchPhrase;
   }
 
   demo (subject) {
@@ -33,7 +33,7 @@ class Instructor extends Person {
   }
 }
 
-// Student
+// Student - needs: name, age, location, previousBackground, className, favSubjects
 
 class Student extends Person {
   constructor (sAttrs) {
@@ -56,14 +56,58 @@ class Student extends Person {
   }
 }
 
-// Project Manager
+// Project Manager - needs: name, age, location, gradClassName, favInstructor
 
+class ProjectManager extends Instructor {
+  constructor (pmAttrs) {
+    super (pmAttrs);
+    this.gradClassName = pmAttrs.gradClassName;
+    this.favInstructor = pmAttrs.favInstructor;
+  }
 
+  standup (channel) {
+    return `${this.name} announces to ${channel}, @channel standy times!​​​​​`;
+  }
 
-// create an Instructor
+  debugsCode (student, subject) {
+    return `${this.name} debugs ${student.name}'s code on ${subject}`
+  }
+}
 
-// create a Student
+// create an Instructor - needs: name, age, location, specialty, favLanguage, catchPhrase
 
-// create a Project Manager
+const indiana = new Instructor ({
+  name: "Indiana Jones",
+  age: 35,
+  location: "Princeton, New Jersey",
+  speciality: "Archeology",
+  favLanguage: "Ancient Sumerian",
+  catchPhrase: "I hate snakes!"
+});
+
+// create a Student - needs: name, age, location, previousBackground, className, favSubjects
+
+const shortRound = new Student ({
+  name: "Short Round",
+  age: 11,
+  location: "Shanghai, China",
+  previousBackground: "taxi driver",
+  className: "FSW17",
+  favSubjects: "Javascript, Treasure Hunting",
+});
+
+// create a Project Manager - needs: name, age, location, gradClassName, favInstructor
+
+const willie = new ProjectManager ({
+  name: "Willie Scott",
+  age: 29,
+  location: "Missouri",
+  gradClassName: "CS2",
+  favInstructor: indiana
+});
 
 // test results
+
+console.log(indiana);
+console.log(shortRound);
+console.log(willie);
