@@ -10,7 +10,7 @@ class Person {
   }
 
   speak () {
-    return `Hello, my name is ${this.name} and I am from ${location}.`
+    return `Hello, my name is ${this.name} and I am from ${location}.`;
   }
 }
 
@@ -25,11 +25,11 @@ class Instructor extends Person {
   }
 
   demo (subject) {
-    return `Today we are learning about ${subject}.`
+    return `Today we are learning about ${subject}.`;
   }
 
   grade () {
-    return `${student.name} receives a perfect score on ${subject}!`
+    return `${student.name} receives a perfect score on ${subject}!`;
   }
 }
 
@@ -44,8 +44,24 @@ class Student extends Person {
   }
 
   listSubjects () {
-    
+    return `${student.name} enjoys ` + student.favSubjects.join(', ');
+  }
+
+  prAssignment (subject) {
+    return `${student.name} has submitted a PR for ${subject}.`;
+  }
+
+  sprintChallenge (subject) {
+    return `${student.name} has begun a sprint challenge on ${subject}.`;
   }
 }
 
 // Project Manager
+
+// create an Instructor
+
+// create a Student
+
+// create a Project Manager
+
+// test results
