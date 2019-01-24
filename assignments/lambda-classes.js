@@ -10,7 +10,7 @@ class Person {
   }
 
   speak () {
-    return `Hello, my name is ${this.name} and I am from ${location}.`;
+    return `Hello, my name is ${this.name} and I am from ${this.location}.`;
   }
 }
 
@@ -28,7 +28,7 @@ class Instructor extends Person {
     return `Today we are learning about ${subject}.`;
   }
 
-  grade () {
+  grade (student, subject) {
     return `${student.name} receives a perfect score on ${subject}!`;
   }
 }
@@ -44,15 +44,15 @@ class Student extends Person {
   }
 
   listSubjects () {
-    return `${student.name} enjoys ` + student.favSubjects.join(', ');
+    return `${this.name} enjoys ` + this.favSubjects + `.`;
   }
 
   prAssignment (subject) {
-    return `${student.name} has submitted a PR for ${subject}.`;
+    return `${this.name} has submitted a PR for ${subject}.`;
   }
 
   sprintChallenge (subject) {
-    return `${student.name} has begun a sprint challenge on ${subject}.`;
+    return `${this.name} has begun a sprint challenge on ${subject}.`;
   }
 }
 
@@ -80,7 +80,7 @@ const indiana = new Instructor ({
   name: "Indiana Jones",
   age: 35,
   location: "Princeton, New Jersey",
-  speciality: "Archeology",
+  specialty: "Archeology",
   favLanguage: "Ancient Sumerian",
   catchPhrase: "I hate snakes!"
 });
@@ -102,12 +102,38 @@ const willie = new ProjectManager ({
   name: "Willie Scott",
   age: 29,
   location: "Missouri",
+  specialty: "singing",
+  favLanguage: "English",
+  catchPhrase: "INDYYYYY!",
   gradClassName: "CS2",
   favInstructor: indiana
 });
 
 // test results
 
+// objects created successfully?
+
 console.log(indiana);
 console.log(shortRound);
 console.log(willie);
+
+// Person methods
+
+indiana.speak(); //?
+shortRound.speak(); //?
+willie.speak(); //?
+
+// Instructor methods
+indiana.demo("Archeology"); //?
+indiana.grade(shortRound, "Archeology"); //?
+
+// Student methods
+
+shortRound.listSubjects(); //?
+shortRound.prAssignment("Javascript"); //?
+shortRound.sprintChallenge("Javascript"); //?
+
+// Project Manager methods
+
+willie.standup("#web17_willie"); //?
+willie.debugsCode(shortRound, "Javascipt"); //?
