@@ -16,6 +16,36 @@ class Person {
 
 // Instructor
 
+class Instructor extends Person {
+  constructor (iAttrs) {
+    super (pAttrs);
+    this.specialty = pAttrs.specialty;
+    this.favLanguage = pAttrs.favLanguage;
+    this.catchPhrase = pAttrs.catchPhrase;
+  }
+
+  demo (subject) {
+    return `Today we are learning about ${subject}.`
+  }
+
+  grade () {
+    return `${student.name} receives a perfect score on ${subject}!`
+  }
+}
+
 // Student
+
+class Student extends Person {
+  constructor (sAttrs) {
+    super (sAttrs);
+    this.previousBackground = sAttrs.previousBackground;
+    this.className = sAttrs.className;
+    this.favSubjects = sAttrs.favSubjects;
+  }
+
+  listSubjects () {
+    
+  }
+}
 
 // Project Manager
