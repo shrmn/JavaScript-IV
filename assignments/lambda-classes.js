@@ -41,6 +41,8 @@ class Student extends Person {
     this.previousBackground = sAttrs.previousBackground;
     this.className = sAttrs.className;
     this.favSubjects = sAttrs.favSubjects;
+    // stretch
+    this.grade = sAttrs.grade;
   }
 
   listSubjects () {
@@ -94,6 +96,7 @@ const shortRound = new Student ({
   previousBackground: "taxi driver",
   className: "FSW17",
   favSubjects: "Javascript, Treasure Hunting",
+  grade: 95,
 });
 
 // create a Project Manager - needs: name, age, location, gradClassName, favInstructor
@@ -137,3 +140,6 @@ shortRound.sprintChallenge("Javascript"); //?
 
 willie.standup("#web17_willie"); //?
 willie.debugsCode(shortRound, "Javascipt"); //?
+
+// Stretch Goal
+
